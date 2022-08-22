@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>POS Restaurent</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+
+<body onload="loadUsers();" class="p-3 m-0 border-0 bd-example">
+    <script>
+        async function loadUsers(){
+            var resp = await fetch('https://reqres.in/api/users?page=2');
+            var jsonResp = await resp.json();
+            console.log(jsonResp);
+            var elem = document.getElementById("left_nav_bar");
+            var outString = '';
+            if(jsonResp){
+                jsonResp.data.forEach(element => {
+                    outString += '<div class="row" style="margin-bottom: 8px;"><div class="col-sm-4"><img src="'+element.avatar+'" width="32" height="32" /></div><div class="col-sm-8"><span class="text-light" href="#" >'+element.first_name+'</span></div></div>'
+                });
+            }
+            elem.innerHTML = outString;
+        }
+    </script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav_bar_01"
+                aria-controls="nav_bar_01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav_bar_01">
+                <a class="navbar-brand" href="#">KFC</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">One</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Two</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Three</a>
+                    </li>
+                </ul>
+            </div>
+            <button class="" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+                aria-controls="offcanvasDarkNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+    </div>
+
+
+    <div class="conatiner container-fluid" style="background-color: #2A2F34;">
+
+
+        <div class="row">
+            <div class="col-2 p-2" style="background-color: #24262E;">
+                <nav class="nav flex-column" id="left_nav_bar">
+                    <!--
+                    <a class="nav-link active" aria-current="page" href="#"
+                        style="color: #ef811a;border-bottom: 2px solid;">2/F Outdoor</a>
+                    <a class="nav-link text-light" href="#" style="border-bottom: 2px solid;">2/F Indoor</a>
+                    <a class="nav-link text-light" href="#" style="border-bottom: 2px solid;">1/F Indoor</a>-->
+                </nav>
+            </div>
+
+
+            <div class="col-9 align-self-center" style="background-color: #2A2F34;">
+                <!--<div class="container px-4">-->
+                <div class="row">
+
+                    <div class="col-sm-2 align-self-center">
+                        <div class="text-light">
+                            <div class="p-1 m-1 rounded" style="background-color: #575C62;min-height: 4rem;">
+                                A111
+                            </div>
+                            <div class="p-1 m-1 rounded" style="background-color: #575C62;min-height: 4rem;">
+                                A112
+                            </div>
+                            <div class="p-1 m-1 rounded" style="background-color: #575C62;min-height: 4rem;">
+                                A113
+                            </div>
+                            <div class="p-1 m-1 rounded" style="background-color: #575C62;min-height: 4rem;">
+                                A114
+                            </div>
+                            <div class="p-1 m-1 rounded" style="background-color: #575C62;min-height: 4rem;">
+                                A115
+                            </div>
+                            <div class="p-1 m-1 rounded" style="background-color: #575C62;min-height: 4rem;">
+                                A116
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-10 text-light">
+
+
+                        <div class="row my-4">
+                            
+                            <div class="col-sm-3">
+                                <div class="row">
+                                    <div class="col-sm-5 rounded" style="background-color: #595C62;min-height: 6rem;border-right:1px solid #2A2F34;">
+                                        C12
+                                    </div>
+                                    <div class="col-sm-5 rounded" style="background-color: #17A044;min-height: 6rem;border-left:1px solid #2A2F34;">
+                                        C15
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="row">
+                                    <div class="col-sm-5 rounded" style="background-color: #EE5563;min-height: 6rem;border:1px solid #2A2F34;">
+                                        C14
+                                    </div>
+                                    <div class="col-sm-5 rounded" style="background-color: #55C1EC;min-height: 6rem;border:1px solid #2A2F34;">
+                                        C15
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="row">
+                                    <div class="col-sm-5 rounded" style="background-color: #FDC243;min-height: 6rem;border:1px solid #2A2F34;">
+                                        D2
+                                    </div>
+                                    <div class="col-sm-5 rounded" style="background-color: #FDC243;min-height: 6rem;border:1px solid #2A2F34;">
+                                        D1
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="row">
+                                    <div class="col-sm-5 rounded" style="background-color: #EE5563;min-height: 6rem;border:1px solid #2A2F34;">
+                                        T999
+                                    </div>
+                                    <div class="col-sm-5 rounded" style="background-color: #EE5563;min-height: 6rem;border:1px solid #2A2F34;">
+                                        A999
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row my-4" >
+                            <div class="col-sm-3">
+                                <div class="row">
+                                    <div class="row">
+                                        <div class="col-6 rounded" style="border:1px solid #2A2F34;background-color: #55C1EC;min-height: 4rem;">
+                                            aa</div>
+                                        <div class="col-6 rounded" style="border:1px solid #2A2F34;background-color: #595C62;min-height: 4rem;">
+                                            aa</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 rounded" style="border:1px solid #2A2F34;background-color: #595C62;min-height: 4rem;">
+                                            aa</div>
+                                        <div class="col-6 rounded" style="border:1px solid #2A2F34;background-color: #17A044;min-height: 4rem;">
+                                            aa</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="row">
+                                    <div class="row">
+                                        <div class="col-6 rounded" style="border:1px solid #2A2F34;background-color: #FDC243;min-height: 4rem;">
+                                            aa
+                                        </div>
+                                        <div class="col-6 rounded" style="border:1px solid #2A2F34;background-color: #55C1EC;min-height: 4rem;">
+                                            aa
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 rounded" style="border:1px solid #2A2F34;background-color: #EE5563;min-height: 4rem;">
+                                            aa
+                                        </div>
+                                        <div class="col-6 rounded" style="border:1px solid #2A2F34;background-color: #FDC243;min-height: 4rem;">
+                                            aa
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="row">
+                                        <div class="col-3 rounded" style="border:1px solid #2A2F34;background-color: #595C62;min-height: 4rem;">aa</div>
+                                        <div class="col-3 rounded" style="border:1px solid #2A2F34;background-color: #595C62;min-height: 4rem;">aa</div>
+                                        <div class="col-3 rounded" style="border:1px solid #2A2F34;background-color: #EE5563;min-height: 4rem;">aa</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3 rounded" style="border:1px solid #2A2F34;background-color: #17A044;min-height: 4rem;">aa</div>
+                                        <div class="col-3 rounded" style="border:1px solid #2A2F34;background-color: #EE5563;min-height: 4rem;">aa</div>
+                                        <div class="col-3 rounded" style="border:1px solid #2A2F34;background-color: #EE5563;min-height: 4rem;">aa</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row my-4">
+                            <div class="col-sm-6 row text-center">
+                                <div class="row my-2">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-3 rounded-circle m-1" style="height:6vw;width:6vw;background-color: #FDC243;">
+                                        F32
+                                    </div>
+                                    <div class="col-sm-3 rounded-circle m-1" style="height:6vw;width:6vw;background-color: #55C1EC;">
+                                        F33
+                                    </div>
+                                    <div class="col-sm-3 rounded-circle m-1" style="height:6vw;width:6vw;background-color: #17A044;">
+                                        F34
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-3 rounded-circle m-1" style="height:6vw;width:6vw;background-color: #595C62;">
+                                        F31
+                                    </div>
+                                    <div class="col-sm-3 rounded-circle m-1" style="height:6vw;width:6vw;background-color: #EE5563;">
+                                        F30
+                                    </div>
+                                    <div class="col-sm-3 rounded-circle m-1" style="height:6vw;width:6vw;background-color: #595C62;">
+                                        F29
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 row">
+                                <div class="col-sm-6">
+                                    <div class="row" style="min-height: 4rem;">
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-8 rounded" style="border-bottom:2px solid #2A2F34;background-color: #EE5563;">
+                                            sasa
+                                        </div>
+                                    </div>
+                                    <div class="row" style="min-height: 4rem;">
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-8 rounded" style="border-bottom:2px solid #2A2F34;background-color: #55C1EC;">
+                                            sasa
+                                        </div>
+                                    </div>
+                                    <div class="row" style="min-height: 4rem;">
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-8 rounded" style="background-color: #FDC243;">
+                                            sasa
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="row" style="min-height: 4rem;">
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-8 rounded" style="border-bottom:2px solid #2A2F34;background-color: #17A044;">
+                                            sasa
+                                        </div>
+                                    </div>
+                                    <div class="row" style="min-height: 4rem;">
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-8 rounded" style="border-bottom:2px solid #2A2F34;background-color: #595C62;">
+                                            sasa
+                                        </div>
+                                    </div>
+                                    <div class="row" style="min-height: 4rem;">
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-8 rounded" style="background-color: #595C62;">
+                                            sasa
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--</div>-->
+            </div>
+            <div class="col-1" style="background-color: #595C62;">
+                <div class="row gy-2 gx-1" style="padding-bottom: 20px;">
+                    <div class="col-sm-12 text-white" style="min-height: 3rem;">
+                        <i class="bi bi-plus" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="col-sm-12 text-white" style="min-height: 3rem;">
+                        <i class="bi bi-list-task" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="col-sm-12" style="background-color: #02ADF6;min-height: 3rem;">
+                        A46
+                    </div>
+                    <div class="col-sm-12" style="background-color: #02ADF6;min-height: 3rem;">
+                        A47
+                    </div>
+                    <div class="col-sm-12" style="background-color: #02ADF6;min-height: 3rem;">
+                        A48
+                    </div>
+                    <div class="col-sm-12" style="background-color: #02ADF6;min-height: 3rem;">
+                        A49
+                    </div>
+                    <div class="col-sm-12" style="background-color: #02ADF6;min-height: 3rem;">
+                        A50
+                    </div>
+                    <div class="col-sm-12" style="background-color: #02ADF6;min-height: 3rem;">
+                        A51
+                    </div>
+                    <div class="col-sm-12" style="background-color: white;min-height: 3rem;">
+                        9+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
